@@ -8,7 +8,6 @@ import urllib.request
 import numpy as np
 import sys
 import os
-import pandas as pd
 import io
 import requests
 
