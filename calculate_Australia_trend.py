@@ -52,11 +52,11 @@ for yr in np.arange(1982,1985):
             data = data[row_st:row_en,col_st:col_en]
             yrs_data[cnt,:,:] = np.where(data > 0.0, data, np.nan)
             cnt += 1
-            
+
     all_yrs[yr_cnt,:,:] = np.nanmax(yrs_data, axis=0)
     yr_cnt += 1
 
-contient_avg = np.nanmean(all_yrs, axis=(1,2))
+continent_avg = np.nanmean(all_yrs, axis=(1,2))
 
-plt.plot(contient_avg)
+plt.plot(continent_avg)
 plt.show()
