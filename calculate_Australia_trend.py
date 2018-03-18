@@ -25,12 +25,13 @@ col_st = 3500
 col_en = 4020
 nrowsx = row_en - row_st
 ncolsx = col_en - col_st
-print(nrowsx, ncolsx)
-nyrears = len(np.arange(1982,1985))
+
+yrs = np.arange(1982,1985)
+nyrears = len(yrs)
 all_yrs = np.zeros((nyrears,nrowsx,ncolsx))
 
 yr_cnt = 0
-for yr in np.arange(1982,1985):
+for yr in yrs:
     yrs_data = np.zeros((24,nrowsx,ncolsx)) # two values per month
     cnt = 0
 
@@ -58,5 +59,20 @@ for yr in np.arange(1982,1985):
 
 continent_avg = np.nanmean(all_yrs, axis=(1,2))
 
-plt.plot(continent_avg)
+width  = 9.0
+height = width / 1.618
+fig = plt.figure(figsize=(width, height))
+plt.rcParams['text.usetex'] = False
+plt.rcParams['font.family'] = "sans-serif"
+plt.rcParams['font.sans-serif'] = "Helvetica"
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['font.size'] = 14
+plt.rcParams['legend.fontsize'] = 14
+plt.rcParams['xtick.labelsize'] = 14
+plt.rcParams['ytick.labelsize'] = 14
+
+ax1 = fig.add_subplot(111)
+ax1.plot(yrs, continent_avg, ls="-", color="black")
+ax1.set_ylabel("LAI (m$^{2}$ m$^{-2}$)")
+ax1.set_xlabel("Year")
 plt.show()
