@@ -20,13 +20,13 @@ ncols = 4320
 
 # Australia, roughly
 row_st = 550
-row_en = 960
+row_en = 953
 col_st = 3500
 col_en = 4020
 nrowsx = row_en - row_st
 ncolsx = col_en - col_st
 
-yrs = np.arange(1982,1985)
+yrs = np.arange(1982,1988)
 nyrears = len(yrs)
 all_yrs = np.zeros((nyrears,nrowsx,ncolsx))
 
