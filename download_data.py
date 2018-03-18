@@ -10,7 +10,7 @@ import sys
 import os
 import io
 import requests
-import pandas
+import pandas as pd
 
 __author__  = "Martin De Kauwe"
 __version__ = "1.0 (18.03.2018)"
